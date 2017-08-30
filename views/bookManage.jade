@@ -1,0 +1,165 @@
+doctype
+html
+    head
+        meta(charset="utf-8")
+        title= title
+        link(rel='styleSheet' href='/bootstrap/css/bootstrap.min.css')
+        link(rel='styleSheet' href='/stylesheets/reset.css')
+        link(rel='styleSheet' href='/stylesheets/admin/bookManage.css')
+    body
+        .content
+            h3.title | 图书管理
+            .addBook
+                a(href="javascript: void(0)").addBook-btn 新书入库
+            .search-content.clearfix
+                .book-search.dropdown
+                    button(type="button" data-toggle="dropdown").btn.dropdown-toggle#dropdown 分类
+                        span.caret
+                    ul.dropdown-menu.pull-right(role="menu" aria-labelledby="dropdown")
+                        li(role="presentation" data-kind = "bookKind")
+                            a(role="menuitem" tabindex="-1" href="javascript: void(0)") 种类
+                        li(role="presentation" data-kind="publish")
+                            a(role="menuitem" tabindex="-1" href="javascript: void(0)") 出版社
+                        li(role="presentation" data-kind="bookName")
+                            a(role="menuitem" tabindex="-1" href="javascript: void(0)") 书名
+                .right-search
+                    form.form-horizontal.search-form
+                        .form-group.col-sm-6.JDefault
+                            label.col-sm-3.control-label.Jshow-kind 条件搜索
+                            .col-sm-8
+                                input(type="text" placeholder="请输入搜索条件" name="").form-control.Jinput
+                        .form-group.col-sm-6.Jselect
+                            label.col-sm-3.control-label 种类
+                            .col-sm-8
+                                select.form-control(name="bookKind")
+                                    option 马列主义毛邓思想
+                                    option 哲学
+                                    option 社会科学总论
+                                    option 政治法律
+                                    option 军事
+                                    option 经济
+                                    option 语言文字
+                                    option 艺术
+                                    option 自然科学总论
+                                    option 数理科学和化学
+                                    option 综合性图书
+                                    option 生物科学
+                                    option 交通运输
+                                    option 数理科学和化学
+                                    option 航空航天
+                                    option 历史地理
+                        .form-group.search-btn
+                            button(type="button").btn.btn-default.submit-btn 搜索
+            .show-results
+            .show-later
+                h3 最近添加记录
+                mixin bookTr(book)
+                    -var time = new Date(book.time)
+                    -var timeStr = time.getFullYear() + ' - ' + (time.getMonth()+1)+' - ' +time.getDate()
+                    tr
+                        td= book.bookId
+                        td= book.bookName
+                        td= book.author
+                        td= book.publish
+                        td= book.price
+                        td= book.bookKind
+                        td= book.stock
+                        td= timeStr
+                        td= book.borrowCount
+                table.table.table-hover
+                    tr
+                        th 编号
+                        th 书名
+                        th 作者
+                        th 出版社
+                        th 价格
+                        th 分类
+                        th 库存
+                        th 上架时间
+                        th 借阅量
+                    -if(books)
+                        -for(var i = 0 ; i < books.length;i++){
+                            +bookTr(books[i])
+                        -}
+        #mask
+        .addStock-part
+            h3.addTitle 添加库存
+                span.close ×
+            form.form-horizontal
+                .form-group
+                    label.col-sm-3.control-label 编号
+                    .col-sm-8
+                        input(type="text" readonly="true" value="1001").form-control.JBookId
+                .form-group
+                    label.col-sm-3.control-label 书名
+                    .col-sm-8
+                        input(type="text" readonly="true" value="自然品德").form-control.JBookName
+                .form-group
+                    label.col-sm-3.control-label 入库数量
+                    .col-sm-8
+                        input(type="number" value="0" name="stock1").form-control
+                .form-group
+                    button(type="button").btn.btn-success.add-btn.col-sm-3 添加
+        .addBook-part
+            h3.addTitle 添加库存
+                span.close ×
+            form.form-horizontal.addBookForm(enctype='multipart/form-data' method='post' action="/admin/addBook")
+                .form-group
+                    label.col-sm-3.control-label 编号:
+                    .col-sm-8
+                        input(type="number" name="bookId" placeholder="请输入编号").form-control
+                .form-group
+                    label.col-sm-3.control-label 书名:
+                    .col-sm-8
+                        input(type="text" name="bookName" placeholder="请输入书名").form-control
+                .form-group
+                    label.col-sm-3.control-label 作者:
+                    .col-sm-8
+                        input(type="text" name="author" placeholder="请输入作者").form-control
+                .form-group
+                    label.col-sm-3.control-label 出版社:
+                    .col-sm-8
+                        input(type="text" name="publish" placeholder="请输入出版社").form-control
+                .form-group
+                    label.col-sm-3.control-label 价格:
+                    .col-sm-8
+                        input(type="number" name="price" placeholder="请输入价格").form-control
+                .form-group
+                    label.col-sm-3.control-label 介绍:
+                    .col-sm-8
+                        textarea.form-control(rows="3" name="introduce")
+                .form-group
+                    label.col-sm-3.control-label 种类:
+                    .col-sm-8
+                        select.form-control(name="bookKind")
+                            option 马列主义毛邓思想
+                            option 哲学
+                            option 社会科学总论
+                            option 政治法律
+                            option 军事
+                            option 经济
+                            option 语言文字
+                            option 艺术
+                            option 自然科学总论
+                            option 数理科学和化学
+                            option 综合性图书
+                            option 生物科学
+                            option 交通运输
+                            option 数理科学和化学
+                            option 航空航天
+                            option 历史地理
+
+                        //input(type="text" name="bookKind" placeholder="请输入种类").form-control
+                .form-group
+                    label.col-sm-3.control-label 图书图片:
+                    .col-sm-8
+                        input(type="file" name="bookImg" multiple='mutiple')
+                .form-group
+                    label.col-sm-3.control-label 入库数量:
+                    .col-sm-8
+                        input(type="number" name="stock" placeholder="请输入入库数量").form-control
+                .form-group
+                    button(type="button").btn.btn-success.addNew-btn.col-sm-3 添加
+        script(src="../javascripts/jquery.min.js")
+        script(src="../bootstrap/js/bootstrap.min.js")
+        script(src="../javascripts/admin/bookManage.js")

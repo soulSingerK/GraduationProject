@@ -1,0 +1,66 @@
+doctype html
+html
+    head
+        meta(charset='UTF-8')
+        title= title
+        link(rel='styleSheet' href='/bootstrap/css/bootstrap.min.css')
+        link(rel='styleSheet' href='/stylesheets/reset.css')
+        link(rel='styleSheet' href='/stylesheets/return.css')
+
+    body
+        .head
+            img(src="images/logo.png")
+            .welcome-back
+                p 欢迎回来，
+                    a.username(href="javascript:void(0)") #{user.username}
+                a.exit(href="/exit") 退出
+        .return-content
+            .return-left
+                h3 还　书
+            .return-right
+                .return-content
+                    -if(records)
+                        mixin record(item)
+                            tr
+                                -var time = new Date(item.returnTime)
+                                -var timeStr = time.getFullYear() + ' - ' + (time.getMonth()+1)+' - ' +time.getDate()
+                                -var borrowTime = new Date(item.borrowTime)
+                                -var borrowStr = borrowTime.getFullYear() + ' - ' + (borrowTime.getMonth()+1)+' - ' +borrowTime.getDate()
+                                td.img-td
+                                    -var src = "./../images/books/"+item.bookImg
+                                    img(src= src)
+                                td= item.bookName
+                                td= item.introduce
+                                td= item.count
+                                td= borrowStr
+                                td= timeStr
+                                -if(!item.overdue){
+                                    td 否
+                                -}
+                                -else{
+                                    td 逾期
+                                        span= item.overdue
+                                        |天
+                                -}
+                                td
+                                    a(href='/doReturn?recordId='+item.recordId+'&bookId='+item.bookId+'&count='+item.count).btn.btn-success 归还
+                        a(href="/").return-index 返回首页
+                        table.table.table-striped
+                            tr
+                                th 封面
+                                th 书名
+                                th 介绍
+                                th 数量
+                                th 借书日期
+                                th 归还日期
+                                th 是否逾期
+                                th 操作
+                            -for(var i = 0; i<records.length;i++){
+                                +record(records[i])
+                            -}
+                    -else
+                        p 您暂时没有借书记录
+                            a(href='/').go-borrow 去借书
+        script(src="../javascripts/jquery.min.js")
+        script(src="../bootstrap/js/bootstrap.min.js")
+        script(src="../javascripts/return.js")

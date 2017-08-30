@@ -1,0 +1,39 @@
+doctype
+html
+    head
+        meta(charset="utf-8")
+        title= title
+        link(rel='styleSheet' href='/bootstrap/css/bootstrap.min.css')
+        link(rel='styleSheet' href='/stylesheets/reset.css')
+        link(rel='styleSheet' href='/stylesheets/admin/userIndex.css')
+    body
+        .content
+            .head
+                h3 个人主页 |
+            .user-content
+                h3 工作安排:
+                .works.clearfix
+                    a.work-thing.refresh-btn(href="#" data-url = '/admin/refresh') 刷新用户信用
+                .borrow
+                    form.form-horizontal.form-borrow.clearfix
+                        .form-group.col-sm-6
+                            label.col-sm-3.control-label 借书处理
+                            .col-sm-8
+                                input(type="text" name="studentId" placeholder="请输入学生学号").form-control
+                        .form-group
+                            button(type="button").btn.btn-default.submit-btn.borrow-btn 搜索
+                    form.form-horizontal.form-return.clearfix
+                        .form-group.col-sm-6
+                            label.col-sm-3.control-label 还书处理
+                            .col-sm-8
+                                input(type="text" name="studentId" placeholder="请输入学生学号").form-control
+                        .form-group
+                            button(type="button").btn.btn-default.submit-btn.return-btn 搜索
+                .show-results
+            #mask
+            .refresh-part
+                h3 刷新中，请稍等...
+                img.refresh-img(src='../images/refresh.jpg')
+        script(src="../javascripts/jquery.min.js")
+        script(src="../bootstrap/js/bootstrap.min.js")
+        script(src="../javascripts/admin/userIndex.js")

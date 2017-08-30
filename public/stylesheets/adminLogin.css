@@ -1,0 +1,18 @@
+body{
+    background: url("./../images/admin_bg.jpg") no-repeat;
+    background-size: cover;
+}
+.head{
+    padding: 5px 30px 0px;
+}
+
+.admin-login{
+    width: 400px;
+    margin: 0 auto;
+    background-color: #999;
+    opacity: 0.8;
+    padding: 20px;
+}
+.text-center{
+    margin-bottom: 20px;
+}

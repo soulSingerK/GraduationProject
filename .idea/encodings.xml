@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/public/javascripts/admin/bookManage.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/javascripts/admin/statistics.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/javascripts/admin/userIndex.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/javascripts/admin/userManage.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/javascripts/index.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/javascripts/person.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/javascripts/register.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/javascripts/result.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/model/recordModel.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/stylesheets/admin/bookManage.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/stylesheets/admin/statistics.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/public/stylesheets/admin/userIndex.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/routes/admin.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/routes/index.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/views/adminIndex.jade" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/views/adminLogin.jade" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/views/bookManage.jade" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/views/index.jade" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/views/layout.jade" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/views/person.jade" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/views/register.jade" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/views/return.jade" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/views/search_results.jade" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/views/statistics.jade" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/views/userIndex.jade" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/views/userManage.jade" charset="UTF-8" />
+  </component>
+</project>

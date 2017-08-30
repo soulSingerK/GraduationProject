@@ -1,0 +1,39 @@
+doctype html
+html
+    head
+        meta(charset='UTF-8')
+        title= title
+        link(rel='styleSheet' href='/bootstrap/css/bootstrap.min.css')
+        link(rel='styleSheet' href='/stylesheets/reset.css')
+        link(rel='styleSheet' href='/stylesheets/adminLogin.css')
+
+    body
+        .head
+            img(src="images/logo.png")
+
+        .admin-login
+            form.form-horizontal(role="form" method="post" action="/admin/validateAdmin")
+                h3.text-center 管理员登录
+                .form-group
+                    label(for = "firstname").col-sm-2.control-label 名字
+                    .col-sm-9
+                        input(type="text" id="firstname" placeholder="请输入账号" name="name").form-control
+                .form-group
+                    label(for = "password").col-sm-2.control-label 密码
+                    .col-sm-9
+                        input(type="password" id="password" placeholder="请输入密码" name="password").form-control
+                .form-group
+                    .col-sm-offset-5.col-sm-10
+                        button(type="button").btn.btn-default.submit-btn 登录
+                -if(error)
+                    .alert.alert-warning
+                        strong 警告！
+                        span= error
+
+
+
+
+
+        script(src="../javascripts/jquery.min.js")
+        script(src="../bootstrap/js/bootstrap.min.js")
+        script(src="../javascripts/adminLogin.js")

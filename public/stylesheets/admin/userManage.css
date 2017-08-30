@@ -1,0 +1,40 @@
+body{
+    background-color: #f1f1f1;
+}
+.content{
+    padding: 20px;
+}
+.title{
+    font-size: 16px;
+    font-weight: bold;
+    color: #323232;
+}
+.users-content{
+    margin-top: 20px;
+}
+.form-group{
+    width: 40%;
+}
+.users-show table td,.users-show table th{
+    text-align: center;
+    line-height: 30px;
+}
+
+.green{
+    color: green!important;
+}
+.red{
+    color: red!important;
+}
+.can-do{
+    padding: 0 4px;
+}
+.no-do{
+    padding: 0 4px;
+    color: #999;
+}
+.no-do:hover{
+    text-decoration: none!important;
+    color: #999!important;
+    cursor: not-allowed;
+}

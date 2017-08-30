@@ -1,0 +1,68 @@
+body{
+    background: url("../images/bg.jpg") no-repeat;
+}
+.head{
+    padding: 5px 30px 0px;
+}
+.login-register,.welcome-back{
+    float: right;
+    margin-top: 50px;
+}
+.welcome-back{
+    color: #624718;
+    padding-right: 10px;
+}
+.welcome-back p{
+    float: left;
+}
+.username{
+    color: #412904;
+}
+.exit{
+    float: left;
+    margin-left: 20px;
+}
+.login-register a{
+    color: #999;
+    margin-right: 10px;
+}
+
+.return-content{
+    position: relative;
+    padding: 0 20px;
+}
+
+.return-left{
+    width: 180px;
+    margin-top: 35px;
+    position: absolute;
+    left: 27px;
+    top: 0;
+    height: 90px;
+}
+.return-left h3{
+    font-size: 20px;
+    color: #fff;
+    line-height: 90px;
+    text-align: center;
+}
+.return-right{
+    padding-left: 180px;
+}
+.return-content{
+    padding-top: 20px;
+}
+.img-td img{
+   height: 30px;
+}
+.table-striped td,.table-striped th{
+    text-align: center;
+    line-height: 30px!important;
+}
+.go-borrow{
+    color: #00B7FF;
+    padding-left: 20px;
+}
+.table{
+    margin-top: 20px;
+}

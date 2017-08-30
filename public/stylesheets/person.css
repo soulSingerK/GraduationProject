@@ -1,0 +1,110 @@
+body{
+    background: url("../images/bg.jpg") no-repeat;
+}
+.head{
+    padding: 5px 30px 0px;
+}
+.login-register,.welcome-back{
+    float: right;
+    margin-top: 50px;
+}
+.welcome-back{
+    color: #624718;
+    padding-right: 10px;
+}
+.welcome-back p{
+    float: left;
+}
+.username{
+    color: #412904;
+}
+.exit{
+    float: left;
+    margin-left: 20px;
+}
+.login-register a{
+    color: #999;
+    margin-right: 10px;
+}
+
+.person-content{
+    padding: 0 30px;
+    position: relative;
+}
+.person-left{
+    margin-top: 35px;
+    width: 180px;
+    position: absolute;
+    left: 27px;
+    top: 0;
+}
+.person-left h3{
+    height: 90px;
+    line-height: 90px;
+    text-align: center;
+    font-size: 20px;
+    color: #fff;
+    letter-spacing: 2px;
+
+}
+.person-right{
+    padding-left: 180px;
+}
+.right-head{
+    padding: 20px 20px 0;
+    line-height: 30px;
+
+}
+.modify-information,.return,.return-index{
+    font-size: 16px;
+    color: #333;
+}
+.return{
+    display: none;
+}
+.return-index{
+    padding-left: 20px;
+}
+.modify-information:hover,.return:hover,.return-index:hover{
+    text-decoration: underline;
+}
+.show-person{
+    width: 300px;
+    margin: 50px auto 0;
+    /*display: none;*/
+}
+.information-item{
+    width: 100%;
+    height: 30px;
+    margin-bottom: 20px;
+}
+
+.item-name{
+    display: block;
+    float: left;
+    width: 80px;
+    text-align: right;
+    line-height: 30px;
+    padding-right: 10px;
+}
+.item-input{
+    height: 30px;
+    width: 220px;
+    padding-left: 10px;
+}
+.modify-person{
+    width: 300px;
+    margin: 50px auto 0;
+    display: none;
+}
+.modify-btn{
+    width: 100px;
+    height: 30px;
+    margin-left: 100px;
+    border: none;
+    line-height: 30px;
+    color: #fff;
+    background-color: #ef5200;
+    text-align: center;
+    border-radius: 5px;
+}

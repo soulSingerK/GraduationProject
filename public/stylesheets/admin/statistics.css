@@ -1,0 +1,26 @@
+.content{
+    padding: 20px;
+}
+.head h3{
+    font-size: 16px;
+    line-height: 30px;
+}
+.statistics-kind{
+    padding: 20px;
+}
+.item-kind{
+    font-size: 16px;
+    margin-right: 20px;
+}
+.item-kind:hover{
+    text-decoration: underline;
+}
+.selected{
+    color: #ef5200;
+}
+
+#container{
+    width: 800px;
+    height: 400px;
+    margin: 0 auto;
+}

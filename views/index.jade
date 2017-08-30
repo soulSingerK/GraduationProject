@@ -1,0 +1,86 @@
+doctype html
+html
+  head
+    meta(charset='UTF-8')
+    title= title
+    link(rel='styleSheet' href='/stylesheets/reset.css')
+    link(rel='styleSheet' href='/stylesheets/index.css')
+  body
+  .head
+    img(src="images/logo.png")
+    -if(username)
+      .welcome-back
+        p 欢迎回来，
+          a.username(href="javascript:void(0)") #{username}
+        a.exit(href="/exit") 退出
+    -else
+      .login-register
+        a.login(href="#") 登录
+        a.register(href="/register") 注册
+
+  .content
+    .content-left
+      ul
+        li.all-resouce
+          p 全部资源
+        li
+          a.book-kind(href="javascript: void(0)") 查询图书
+
+        li
+          a.book-kind.person-information(href="javascript: void(0)") 个人信息
+        li
+          a.book-kind.return-book(href="javascript: void(0)") 还　　书
+    .content-right
+      p.right-head 当前位置：系统桌面>
+        span.now-page 首页
+      .right-content
+        .change-search.clearfix
+          span.quick-search.search-select 快速检索
+          span.better-search 高级检索
+          .border-content
+        .search-forms
+          form.quick-search-form.search-form.clearfix(method="post" action="/quick_search")
+            ul.logical-kind
+              li 逻辑检索项
+              li 书　名:
+              li 作　者:
+              li 出版社:
+            .search-words
+              p 检索词
+              input(type="text" name="bookName")
+              input(type="text" name="author")
+              input(type="text" name="publish")
+            button.quick-btn.search-submit(type="button") 立即搜索
+          form.better-search-form.search-form.clearfix(method="post" action="/better_search")
+            ul.logical-kind
+              li 逻辑检索项
+              li 书　名:
+              li 作　者:
+              li 出版社:
+              li 时　间:
+              li 种　类:
+            .search-words
+              p 检索词
+              input(type="text" name="bookName")
+              input(type="text" name="author")
+              input(type="text" name="publish")
+              input(type="text" name="time")
+              input(type="text" name="bookKind")
+            button.better-btn.search-submit 立即搜索
+  #mask
+
+
+  .login-part
+    h3.login-title 用户登录
+      a(href="javascript:void(0)").close-btn ×
+    form.login-form(method="post" action="/doLogin")
+      .username.input-item.clearfix
+        span.input-name 用户名:
+        input(type="number" name="studentId" placeholder="请输入学号")
+      .pwd.input-item.clearfix
+        span.input-name 密码:
+        input(type="password" name="password" placeholder="请输入密码")
+      .login-btn
+        button(type="button") 登录
+    script(src="../javascripts/jquery-1.8.3.min.js")
+    script(src="../javascripts/index.js")

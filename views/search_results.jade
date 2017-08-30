@@ -1,0 +1,69 @@
+doctype html
+html
+    head
+        meta(charset='UTF-8')
+        title= title
+        link(rel='styleSheet' href='/stylesheets/reset.css')
+        link(rel='styleSheet' href='/stylesheets/calendar.css')
+        link(rel='styleSheet' href='/stylesheets/results.css')
+    body
+        .head
+            img(src="images/logo.png")
+            .welcome-back
+                p 欢迎回来，
+                    a.username(href="javascript:void(0)") #{username}
+        .result-content
+            .result-left
+                h3 查询结果
+            .result-right
+                .books-show.clearfix
+                    a(href="/").return-index 返回首页
+                    -if(books)
+                        mixin book(item)
+                            .book-item
+                                - var src = "./../images/books/"+item.bookImg
+                                img(src= src)
+                                .book-introduce
+                                    p.book-name=item.bookName
+                                        span.book-stock 库存:
+                                            span=item.stock
+                                    input(type="hidden" name="bookname" value= item.bookName)
+                                    .book-price
+                                        span 价格：￥
+                                        span.price-number=item.price
+                                    .introduce 介绍：
+                                        span.introduce-content= item.introduce
+                                    input(type="hidden" name="bookid" value=item.bookId)
+                                -if(item.stock>0)
+                                    a(href="#").book-borrow 借阅
+                                -else
+                                    a(href="#").no-stock.book-borrow 借阅
+
+                        -for(var i = 0; i < books.length;i++){
+                            +book(books[i])
+                        -}
+                    -else
+                        p.no-results 无结果
+        #mask
+        .borrow-part
+            h3.borrow-title 借阅书籍
+                a(href="javascript: void(0)").borrow-close ×
+            form.borrow-form(method="post" action="/borrow")
+                .input-item
+                    span 姓　　名
+                    input(type="text" name="username" readonly=true value= username)
+                .input-item
+                    span 借阅书名
+                    input(type="text" name="bookName" readonly=true)
+                .input-item
+                    span 数　　量
+                    input(type="number" name="count" value="1")
+                .input-item
+                    span 归还时间
+                    input(name = "time" type="text" class="Wdate" onFocus = "WdatePicker({lang: 'zh-cn',dateFmt:'yyyy-MM-dd'})")
+                .input-item
+                    button(type="button").borrow-btn 确定借阅
+                input(type="hidden" name="bookId")
+        script(src="../javascripts/jquery-1.8.3.min.js")
+        script(src="../javascripts/My97DatePicker/WdatePicker.js")
+        script(src="../javascripts/result.js")

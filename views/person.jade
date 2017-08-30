@@ -1,0 +1,67 @@
+doctype html
+html
+    head
+        meta(charset='UTF-8')
+        title= title
+        link(rel='styleSheet' href='/stylesheets/reset.css')
+        link(rel='styleSheet' href='/stylesheets/person.css')
+    body
+        .head
+            img(src="images/logo.png")
+            .welcome-back
+                p 欢迎回来，
+                    a.username(href="javascript:void(0)") #{user.username}
+                a.exit(href="/exit") 退出
+        .person-content
+            .person-left
+                h3 个人信息
+            .person-right
+                .right-head
+                    a(href="#").modify-information 修改信息
+                    a(href="#").return 返回
+                    a(href="/").return-index 返回首页
+                .show-person
+                    .information-item
+                        span.item-name 姓　名：
+                        input(type = "text" readonly= true value= user.username).item-input
+                    .information-item
+                        span.item-name 电　话：
+                        input(type = "text" readonly= true value= user.telephone).item-input
+                    .information-item
+                        span.item-name 班　级：
+                        input(type = "text" readonly= true value= user.userClass).item-input
+                    .information-item
+                        span.item-name 学　号：
+                        input(type = "text" readonly= true value= user.studentId).item-input
+                    .information-item
+                        span.item-name 邮　箱：
+                        input(type = "text" readonly= true value= user.email).item-input
+                form.modify-person
+                    .information-item
+                        span.item-name 姓　　名：
+                        input(type = "text" name="username" value= user.username).item-input
+                    .information-item
+                        span.item-name 班　　级：
+                        input(type = "text" name="userClass" value= user.userClass).item-input
+                    .information-item
+                        span.item-name 学　　号：
+                        input(type = "number" name="studentId" value= user.studentId).item-input
+                    .information-item
+                        span.item-name 手机号码：
+                        input(type = "number" name="telephone" value= user.telephone).item-input
+                    .information-item
+                        span.item-name 邮　　箱：
+                        input(type = "text" name="email" value= user.email).item-input
+                    .information-item
+                        span.item-name 旧密码：
+                        input(type = "password" name="laterPwd").item-input
+                    .information-item
+                        span.item-name 新密码：
+                        input(type = "password" name="newPwd").item-input
+                    .information-item
+                        span.item-name 确认密码：
+                        input(type = "password" name="newPwdAgain").item-input
+                    button(type="button").modify-btn 确认修改
+
+        script(src="../javascripts/jquery-1.8.3.min.js")
+        script(src="../javascripts/person.js")
